@@ -1,0 +1,305 @@
+@import url('https://fonts.googleapis.com/css2?family=Bilbo+Swash+Caps&family=Poppins:wght@900&display=swap');
+
+*,
+*::after,
+*::before {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    transition: all 100ms ease-in;
+}
+
+body {
+    background-color: #4ba8a1ce;
+    overflow: hidden;
+    height: 111vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.msg {
+    width: 100%;
+    font-family: "Bilbo Swash Caps", cursive;
+    font-size: 10vw;
+    font-weight: bolder;
+    color: #fff0c3;
+    text-align: center;
+    opacity: 0;
+    animation: message 2s ease-in-out 1s forwards;
+}
+
+@keyframes message {
+    0% {
+        opacity: 0;
+        transform: translateY(0);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(-2%);
+        color: magenta;
+    }
+}
+.y1 {
+    color: #fff;
+    animation: y1colourful 2s ease-in-out 5.75s forwards;
+}
+.y2 {
+    color: #fff;
+    animation: y2colourful 2s ease-in-out 5.75s forwards;
+}
+.y3 {
+    color: #fff;
+    animation: y3colourful 2s ease-in-out 5.75s forwards;
+}
+.y4 {
+    color: #fff;
+    animation: y4colourful 2s ease-in-out 5.75s forwards;
+}
+
+
+@keyframes y1colourful{
+    0%{
+        color: #fff;
+    }
+    100%{
+        color: #ff0000;
+    }
+}
+@keyframes y2colourful{
+    0%{
+        color: #fff;
+    }
+    100%{
+        color: #ff7f00;
+    }
+}
+@keyframes y3colourful{
+    0%{
+        color: #fff;
+    }
+    100%{
+        color: #ffff00;
+    }
+}
+@keyframes y4colourful{
+    0%{
+        color: #fff;
+    }
+    100%{
+        color: #00ff00;
+    }
+}
+
+.year {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 17.5vw;
+    font-weight: 700;
+    font-family: "Poppins", sans-serif;
+    letter-spacing: -1.2vw;
+    color: #fff;
+    position: relative;
+}
+
+.year > span{
+    font-size: 10vw;
+    font-weight: 700;
+    font-family: "Poppins", sans-serif;
+    letter-spacing: -0.2vw;
+}
+
+.first_year {
+    display: flex;
+}
+
+.old {
+    position: relative;
+    animation: old_animation 3.5s ease-in-out 5s forwards;
+}
+
+@keyframes old_animation {
+    0% {
+        top: 0%;
+    }
+    100% {
+        top: -100vh;
+    }
+}
+
+.y4 {
+    position: relative;
+    opacity: 0;
+    animation: new_animation 2.5s ease-in-out 2.5s forwards, move_closer 0.5s ease-in-out 6.5s forwards;
+}
+
+@keyframes new_animation {
+    0% {
+        opacity: 0;
+        left: 100vh;
+    }
+    100% {
+        opacity: 1;
+        left: 0;
+    }
+}
+
+@keyframes move_closer {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-7vw);
+        color: gold ;
+    }
+}
+
+.balloon {
+    width: 10vw;
+    height: 20vh;
+    border-radius: 100%;
+    background-color: #ff0000;
+    position: absolute;
+    top: 100%;
+    margin-top: -55vh;
+    margin-left: 0vw;
+    opacity: 0; /* Start invisible */
+    animation: balloon_appear 5s 4s;
+}
+
+
+.balloon::after {
+    content: "";
+    width: 0.4vw;
+    height: 11vh;
+    background-color: #fff;
+    position: absolute;
+    left: 50%;
+    margin-left: -0.2vw;
+    bottom: -11vh;
+}
+
+.balloon::before {
+    content: "";
+    border-style: solid;
+    border-width: 0 1vw 2vh 1vw;
+    border-color: transparent transparent #fd3553 transparent;
+    position: absolute;
+    left: 50%;
+    bottom: -1vh;
+    margin-left: -1vw;
+}
+
+@keyframes balloon_appear {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes balloon_animation {
+    0% {
+        left: 100%;
+    }
+    50% {
+        left : 50%;
+    }
+    100% {
+        top: -100vh;
+    }
+}
+
+.firework {
+    position: absolute;
+    width: 20vw;
+    height: 20vh;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    animation: firework_animation 2s ease-in-out 5s forwards;
+}
+
+.cracker {
+    position: absolute;
+    width: 0.4vw;
+    height: 10vh;
+    background-color: gold;
+    transform-origin: 50% 100%;
+    overflow: hidden;
+    animation: fire 2s ease-in-out infinite;
+}
+
+@keyframes firework_animation {
+    0% {
+        opacity: 0;
+        transform: scale(0.5);
+    }
+    50% {
+        opacity: 1;
+        transform: scale(1.2);
+    }
+    100% {
+        opacity: 0;
+        transform: scale(1.5);
+    }
+}
+
+@keyframes fire {
+    0% {
+        top: 100%;
+    }
+    25% {
+        top: 50%;
+    }
+    50% {
+        top: -25%;
+    }
+    75% {
+        top: -50%;
+    }
+    100% {
+        top: -50%;
+    }
+}
+
+.cracker:nth-child(1) {
+    transform: rotate(0deg) translateY(-1.5vh);
+}
+.cracker:nth-child(2) {
+    transform: rotate(30deg) translateY(-1.5vh);
+}
+.cracker:nth-child(3) {
+    transform: rotate(60deg) translateY(-1.5vh);
+}
+.cracker:nth-child(4) {
+    transform: rotate(90deg) translateY(-1.5vh);
+}
+.cracker:nth-child(5) {
+    transform: rotate(120deg) translateY(-1.5vh);
+}
+.cracker:nth-child(6) {
+    transform: rotate(150deg) translateY(-1.5vh);
+}
+.cracker:nth-child(7) {
+    transform: rotate(180deg) translateY(-1.5vh);
+}
+.cracker:nth-child(8) {
+    transform: rotate(210deg) translateY(-1.5vh);
+}
+.cracker:nth-child(9) {
+    transform: rotate(240deg) translateY(-1.5vh);
+}
+.cracker:nth-child(10) {
+    transform: rotate(270deg) translateY(-1.5vh);
+}
+.cracker:nth-child(11) {
+    transform: rotate(300deg) translateY(-1.5vh);
+}
+.cracker:nth-child(12) {
+    transform: rotate(330deg) translateY(-1.5vh);
+}
